@@ -9,11 +9,10 @@ terraform {
   required_version = ">= 0.15.4"
 }
 
-resource "aws_instance" "instance1" {
-  ami           = "ami-08a0d1e16fc3f61ea"
-  instance_type = "t2.micro"
+resource "aws_vpc" "dev_vpc" {
+ cidr_block = "10.0.0.0/16"
+}
 
-  tags = {
-    name = "My-Demo-Instances"
-  }
+resource "aws_vpc" "dev_vpc2" {
+ cidr_block = "10.0.0.0/16"
 }
