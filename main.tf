@@ -1,6 +1,12 @@
-provider "aws" {
-  region = "us-east-1"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">=3.44.0"
+    }
+  }
 
+  required_version = ">= 0.15.4"
 }
 
 resource "aws_instance" "instance1" {
@@ -10,5 +16,4 @@ resource "aws_instance" "instance1" {
   tags = {
     name = "My-Demo-Instances"
   }
-
 }
