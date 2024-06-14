@@ -2,17 +2,20 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">=3.44.0"
+      version = "~> 4.16"
     }
   }
 
-  required_version = ">= 0.15.4"
+  required_version = ">= 1.2.0"
 }
 
-resource "aws_vpc" "dev_vpc" {
- cidr_block = "10.0.0.0/16"
+provider "aws" {
+  region  = "us-east-1"
 }
 
-resource "aws_vpc" "dev_vpc2" {
- cidr_block = "10.0.0.0/16"
-}
+resource "aws_instance" "app_server" {
+  ami           = "ami-830c94e3"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ExampleAppServerInstance"
