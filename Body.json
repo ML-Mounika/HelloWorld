@@ -1,7 +1,7 @@
 {
-  "description": "REST DEMO USER",
+  "description": "REST DEMOS USER",
   "isActive": true,
-  "targetGroupCode": "RESTDEMOUSER",
-  "targetGroupName": "REST DEMO USER",
+  "targetGroupCode": "RESTDEMOSUSER",
+  "targetGroupName": "REST DEMOS USER",
   "securityOverridden": false
 }
